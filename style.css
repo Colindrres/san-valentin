@@ -48,15 +48,11 @@ h1 {
     justify-content: center;
 }
 
-button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    pointer-events: auto;
-    z-index: 20;
+.buttons {
+    position: relative;
+    min-height: 80px;
 }
+
 
 /* Botón SÍ */
 #yes {
