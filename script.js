@@ -17,8 +17,10 @@ let index = 0;
 
 // Función para mover el botón NO
 function moveNoButton() {
-    const maxX = window.innerWidth - noBtn.offsetWidth - 20;
-    const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+    const padding = 20;
+
+    const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+    const maxY = window.innerHeight - noBtn.offsetHeight - padding;
 
     const x = Math.random() * maxX;
     const y = Math.random() * maxY;
