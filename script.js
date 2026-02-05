@@ -14,24 +14,27 @@ const noImages = [
 
 let index = 0;
 
-// NO huye
+// Función para mover el botón y cambiar imagen
 noBtn.addEventListener("mouseenter", () => {
-    const x = Math.random() * (window.innerWidth - 120);
-    const y = Math.random() * (window.innerHeight - 60);
+    // 1. Mover el botón a una posición aleatoria
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
 
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
 
+    // 2. Cambiar la imagen de fondo (de la 2 a la 9)
     if (index < noImages.length) {
         document.body.style.backgroundImage = `url('${noImages[index]}')`;
         index++;
+    } else {
+        index = 0; // Reinicia las imágenes si sigue intentando dar a No
     }
 });
 
-// SÍ gana
+// Cuando por fin dice que SÍ
 yesBtn.addEventListener("click", () => {
     document.body.style.backgroundImage = "url('images/Final.jpeg')";
     document.querySelector("h1").innerText = "¡Sabía que dirías que sí! 💖🥰";
     document.querySelector(".buttons").style.display = "none";
 });
-
