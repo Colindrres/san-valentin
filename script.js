@@ -2,25 +2,22 @@ const noButton = document.getElementById("no");
 const yesButton = document.getElementById("yes");
 const body = document.body;
 
-// Fondos cuando intenta presionar "No"
 const noBackgrounds = [
-  "2.jpeg",
-  "3.jpeg",
-  "4.jpeg",
-  "5.jpeg",
-  "6.jpeg",
-  "7.jpeg",
-  "8.jpeg",
-  "9.jpeg"
+  "images/2.jpeg",
+  "images/3.jpeg",
+  "images/4.jpeg",
+  "images/5.jpeg",
+  "images/6.jpeg",
+  "images/7.jpeg",
+  "images/8.jpeg",
+  "images/9.jpeg"
 ];
 
-// Fondo final cuando presiona "Sí"
-const yesBackground = "Final.jpeg";
+const yesBackground = "images/Final.jpeg";
 
 let currentIndex = 0;
 let accepted = false;
 
-// Cuando el mouse pasa sobre "No"
 noButton.addEventListener("mouseover", () => {
   if (accepted) return;
 
@@ -32,13 +29,9 @@ noButton.addEventListener("mouseover", () => {
 
   body.style.backgroundImage = `url('${noBackgrounds[currentIndex]}')`;
 
-  currentIndex++;
-  if (currentIndex >= noBackgrounds.length) {
-    currentIndex = 0;
-  }
+  currentIndex = (currentIndex + 1) % noBackgrounds.length;
 });
 
-// Cuando presiona "Sí"
 yesButton.addEventListener("click", () => {
   accepted = true;
   body.style.backgroundImage = `url('${yesBackground}')`;
