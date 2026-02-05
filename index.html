@@ -5,19 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>San Valentín 💖</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
   <div class="overlay"></div>
 
   <div class="container">
-    <h1>¿Quieres ser mi San Valentín? 💘</h1>
+    <h1 id="mainTitle">¿Quieres ser mi San Valentín? 💘</h1>
+    
+    <p id="counter">Intentos de huida: 0 / 8</p>
 
     <div class="buttons">
       <button id="yesBtn">Sí ❤️</button>
       <button id="noBtn">No 💔</button>
     </div>
+
+    <div id="finalMessage" class="hidden">
+        <p class="typewriter">Eres lo mejor que me ha pasado... ¡Te amo! ✨</p>
+    </div>
   </div>
+
+  <audio id="bgMusic" loop src="sounds/musica_fondo.mp3"></audio>
+  <audio id="errorSound" src="sounds/error.mp3"></audio>
 
   <script src="script.js"></script>
 </body>
