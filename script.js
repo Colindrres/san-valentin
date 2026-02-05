@@ -1,6 +1,5 @@
-const noBtn = document.getElementById("no");
-const yesBtn = document.getElementById("yes");
-const question = document.getElementById("question");
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
 
 const noImages = [
     "images/2.jpeg",
@@ -15,15 +14,10 @@ const noImages = [
 
 let index = 0;
 
-// Función para mover el botón NO
-function moveNoButton() {
-    const padding = 20;
-
-    const maxX = window.innerWidth - noBtn.offsetWidth - padding;
-    const maxY = window.innerHeight - noBtn.offsetHeight - padding;
-
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
+// NO huye
+noBtn.addEventListener("mouseenter", () => {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
 
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
@@ -32,21 +26,12 @@ function moveNoButton() {
         document.body.style.backgroundImage = `url('${noImages[index]}')`;
         index++;
     }
-}
-
-// PC: cuando se acerca el mouse
-noBtn.addEventListener("mouseenter", moveNoButton);
-
-// MÓVIL: cuando intenta tocar
-noBtn.addEventListener("touchstart", (e) => {
-    e.preventDefault();
-    moveNoButton();
 });
 
-// Botón SÍ
+// SÍ gana
 yesBtn.addEventListener("click", () => {
     document.body.style.backgroundImage = "url('images/Final.jpeg')";
-    question.innerText = "¡Sabía que dirías que sí! 💖🥰";
+    document.querySelector("h1").innerText = "¡Sabía que dirías que sí! 💖🥰";
     document.querySelector(".buttons").style.display = "none";
 });
 
