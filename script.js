@@ -1,5 +1,6 @@
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const question = document.getElementById("question");
 
 const noImages = [
     "images/2.jpeg",
@@ -12,26 +13,38 @@ const noImages = [
     "images/9.jpeg"
 ];
 
-let noClickCount = 0;
+let index = 0;
 
-// Botón NO huye y cambia imagen
-noBtn.addEventListener("mouseenter", () => {
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 50);
+// Función para mover el botón NO
+function moveNoButton() {
+    const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+    const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
 
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
 
-    if (noClickCount < noImages.length) {
-        document.body.style.backgroundImage = `url('${noImages[noClickCount]}')`;
-        noClickCount++;
+    if (index < noImages.length) {
+        document.body.style.backgroundImage = `url('${noImages[index]}')`;
+        index++;
     }
+}
+
+// PC: cuando se acerca el mouse
+noBtn.addEventListener("mouseenter", moveNoButton);
+
+// MÓVIL: cuando intenta tocar
+noBtn.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    moveNoButton();
 });
 
 // Botón SÍ
 yesBtn.addEventListener("click", () => {
     document.body.style.backgroundImage = "url('images/Final.jpeg')";
-    document.querySelector("h1").innerText = "¡Sabía que dirías que sí! 💖🥰";
+    question.innerText = "¡Sabía que dirías que sí! 💖🥰";
     document.querySelector(".buttons").style.display = "none";
 });
 
