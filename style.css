@@ -46,28 +46,28 @@ h1 {
     justify-content: center;
 }
 
-button {
-    padding: 15px 35px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: transform 0.2s;
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
 }
 
 #yesBtn {
     background-color: #ff4d6d;
     color: white;
-    z-index: 20;
+    position: relative;
+    z-index: 10;
 }
 
 #noBtn {
     background-color: #444;
     color: white;
-    position: fixed; /* Esto evita que tape al botón SI */
-    z-index: 30;
-    transition: 0.1s ease; /* Movimiento suave */
+    position: relative; 
+    z-index: 10;
+    transition: 0.1s;
 }
 
 @media (max-width: 768px) {
