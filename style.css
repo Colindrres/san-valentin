@@ -16,18 +16,16 @@ body {
     justify-content: center;
 }
 
-/* Capa oscura para que el texto se vea */
+/* Capa oscura */
 .overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0, 0, 0, 0.45);
     z-index: 1;
     pointer-events: none;
 }
 
+/* Caja central */
 .container {
     position: relative;
     z-index: 10;
@@ -42,6 +40,7 @@ h1 {
 }
 
 .buttons {
+    position: relative;
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -57,26 +56,27 @@ button {
     z-index: 20;
 }
 
-
-#yesBtn {
+/* Botón SÍ */
+#yes {
     background-color: #ff4d6d;
     color: white;
 }
 
-#noBtn {
+/* Botón NO */
+#no {
     background-color: #444;
     color: white;
     position: absolute;
 }
 
-/* EXTRA PARA CELULAR */
+/* Ajuste celular */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
     }
-
     body {
         background-position: center top;
     }
 }
+
 
