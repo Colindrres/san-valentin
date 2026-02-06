@@ -31,17 +31,24 @@ body {
 .welcome-box {
     text-align: center;
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    width: 80%;
+    width: 85%;
+    max-width: 400px;
 }
 
-.welcome-box h2 { color: #ff4d6d; margin-bottom: 20px; font-size: 1.5rem; }
+.welcome-img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.welcome-box h2 { color: #ff4d6d; margin-bottom: 20px; font-size: 1.3rem; }
 
 #startBtn {
     background: #ff4d6d; color: white; border: none;
-    padding: 15px 40px; border-radius: 50px; cursor: pointer; font-weight: bold; font-size: 1.1rem;
+    padding: 15px 40px; border-radius: 50px; cursor: pointer; font-weight: bold;
 }
 
 .overlay {
@@ -59,53 +66,41 @@ body {
     width: 90%;
 }
 
-h1 { font-size: 2.2rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); margin-bottom: 30px; }
+h1 { font-size: 2rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); margin-bottom: 30px; }
 
 .buttons { 
-    display: flex; 
-    gap: 20px; 
-    justify-content: center; 
-    align-items: center;
-    min-height: 120px;
+    display: flex; gap: 20px; justify-content: center; align-items: center; min-height: 120px;
 }
 
 button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 15px 30px; font-size: 1.2rem; border: none; border-radius: 50px;
+    cursor: pointer; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
 }
 
 #yesBtn { background-color: #ff4d6d; color: white; z-index: 10; }
-#noBtn { 
-    background-color: #444; 
-    color: white; 
-    z-index: 20;
-    transition: left 0.1s ease, top 0.1s ease;
-}
+#noBtn { background-color: #444; color: white; z-index: 20; transition: left 0.1s, top 0.1s; }
 
 .hidden { display: none !important; }
 
-/* Texto final ajustado para móviles */
+/* Estilo Máquina de Escribir */
 .typewriter {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    margin-top: 20px;
-    line-height: 1.4;
     color: white;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-    white-space: normal; /* Permite que el texto baje de línea */
-    width: 100%;
-    animation: typing 3.5s steps(40, end);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+    margin: 20px auto;
+    line-height: 1.5;
+    display: inline-block;
+    border-right: 3px solid white; /* El cursor */
+    white-space: pre-wrap; /* Para que respete los saltos de línea */
 }
 
-@keyframes typing { from { width: 0; opacity: 0; } to { width: 100%; opacity: 1; } }
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+}
 
-@media (max-width: 768px) {
-    h1 { font-size: 1.8rem; }
-    .typewriter { font-size: 1.3rem; }
+.animating-cursor {
+    animation: blink-caret .75s step-end infinite;
 }
