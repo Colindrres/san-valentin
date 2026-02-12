@@ -63,12 +63,12 @@ yesBtn.addEventListener("click", () => {
     confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
 
     document.body.style.backgroundImage = "url('images/Final.jpeg')";
-    mainTitle.innerText = "¡Sabía que dirías que sí! 💖🥰";
+    mainTitle.innerText = "¡Yo sabía que si querías! 💖🥰";
     document.querySelector(".buttons").style.display = "none";
     
     finalMessage.classList.remove("hidden");
     typewriterText.classList.add("animating-cursor");
     
     // Inicia el efecto de escritura con tu mensaje
-    typeWriter("Eres lo mejor que me ha pasado... \n ¡Te amo con todo mi corazón! ✨", 0);
+    typeWriter("Yo solo quiero que nunca me faltes Tú... \n ¡Te amo con todo mi corazón! ✨", 0);
 });
