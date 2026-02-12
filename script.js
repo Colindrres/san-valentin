@@ -70,5 +70,5 @@ yesBtn.addEventListener("click", () => {
     typewriterText.classList.add("animating-cursor");
     
     // Inicia el efecto de escritura con tu mensaje
-    typeWriter("Yo solo quiero que nunca me faltes Tú... \n ¡Te amo con todo mi corazón! ✨", 0);
+    typeWriter("Ahora si besemonos ya!... \n ¡ jajaja mentira, Te amo mucho pero si besemonos! ✨", 0);
 });
